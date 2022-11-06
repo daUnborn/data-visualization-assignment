@@ -48,3 +48,23 @@ plt.ylabel("New Deaths")
 plt.legend()
 
 plt.show()
+
+
+#comparing New Cases and Deaths per region
+
+#generate date for 4 regions:
+
+euro = create_df('WHO_region', 'EURO', 'Year', 2022)['New_deaths'].sum()
+afro = create_df('WHO_region', 'AFRO', 'Year', 2022)['New_deaths'].sum()
+wpro = create_df('WHO_region', 'WPRO', 'Year', 2022)['New_deaths'].sum()
+amro = create_df('WHO_region', 'AMRO', 'Year', 2022)['New_deaths'].sum()
+
+
+who_regions = [euro, afro, wpro, amro]
+who_regions_label = ['EURO', 'AFRO', 'WPRO', 'AMRO']
+explode = (0.1, 0, 0, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
+
+
+plt.pie(who_regions, explode=explode, labels=who_regions_label, autopct='%1.3f%%', shadow=True, startangle=90)
+
+plt.show()
