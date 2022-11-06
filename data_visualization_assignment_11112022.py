@@ -68,3 +68,41 @@ explode = (0.1, 0, 0, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
 plt.pie(who_regions, explode=explode, labels=who_regions_label, autopct='%1.3f%%', shadow=True, startangle=90)
 
 plt.show()
+
+
+months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+ind = np.arange(len(months)) 
+width = 0.25
+  
+euro_2020 = create_df('WHO_region', 'EURO', 'Year', 2020)['New_cases'].tolist()
+bar_2020 = plt.bar(ind, euro_2020, width, color = 'r')
+  
+euro_2021 = create_df('WHO_region', 'EURO', 'Year', 2021)['New_cases'].tolist()
+bar_2021 = plt.bar(ind+width, euro_2021, width, color='g')
+  
+plt.xlabel("Number of Cases")
+plt.ylabel('Month')
+plt.title("Covid Cases in Europe Region 2020 vs 2021")
+  
+plt.xticks(ind+width,months,rotation='vertical')
+plt.legend( (bar_2020, bar_2021), ('2020', '2021') )
+plt.show()
+
+
+months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+ind = np.arange(len(months)) 
+width = 0.25
+  
+euro_2020 = create_df('WHO_region', 'EURO', 'Year', 2020)['New_cases'].tolist()
+bar_2020 = plt.bar(ind, euro_2020, width, color = 'r')
+  
+euro_2021 = create_df('WHO_region', 'EURO', 'Year', 2021)['New_cases'].tolist()
+bar_2021 = plt.bar(ind+width, euro_2021, width, color='g')
+  
+plt.xlabel("Number of Cases")
+plt.ylabel('Month')
+plt.title("Covid Cases in Europe Region 2020 vs 2021")
+  
+plt.xticks(ind+width,months,rotation='vertical')
+plt.legend( (bar_2020, bar_2021), ('2020', '2021') )
+plt.show()
