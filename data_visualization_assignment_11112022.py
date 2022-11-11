@@ -10,7 +10,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-df_health_data = pd.read_csv(' )
+df_health_data = pd.read_csv('https://covid19.who.int/WHO-COVID-19-global-data.csv')
 
 
 #Extracting Month and Year from the Date_reported column
@@ -92,7 +92,7 @@ months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec
 width = 0.35
 
 def random_number(num):
-    ''' This function is used to generate numbers serially from 0 to the specified number - 1'''
+    ''' This function is used to generate numbers serially from 0 to the specified number - num'''
     ind = np.arange(len(num))
     return ind
 
@@ -111,4 +111,4 @@ plt.title("Covid-19 Cases in Europe Region 2020 vs 2021")
 plt.xticks(random_number(months)+width,months,rotation='vertical')
 plt.legend( (bar_2020, bar_2021), ('2020', '2021'))
 plt.savefig('new_cases_2020_2021png')
-plt.show() 
+plt.show()
