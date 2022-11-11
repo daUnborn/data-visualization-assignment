@@ -87,12 +87,19 @@ draw_pie_chart(who_regions, explode, who_regions_label)
 
 
 
-
 months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
 width = 0.35
 
 def random_number(num):
-    ''' This function is used to generate numbers serially from 0 to the specified number - num'''
+    ''' 
+    
+    This function is used to generate numbers serially from 0 to the specified number - num
+    
+    name: randum_number
+    Method:
+        num: number of random number to generate
+    
+    '''
     ind = np.arange(len(num))
     return ind
 
